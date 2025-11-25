@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DocSpace Integratsiyasi</title>
+    
+    <script src="{{.DocSpaceURL}}/static/scripts/sdk/2.0.0/api.js"></script>
+    <style>
+        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+        #docspace-frame-container { width: 100%; height: 100vh; }
+    </style>
+</head>
+<body>
+
+    <div id="docspace-frame-container"></div>
+
+    <script>
+        var docSpaceURL = "{{.DocSpaceURL}}";
+        var frameId = "docspace-frame-container";
+
+        var DocSpaceSDK = DocSpace.SDK;
+        
+        var docSpaceFrame = new DocSpaceSDK.DocSpaceFrame({
+            id: frameId, 
+            url: docSpaceURL, 
+       
+        });
+        
+        docSpaceFrame.init();
+        
+        console.log("DocSpace Frame SDK ishga tushirildi:", docSpaceURL);
+    </script>
+
+</body>
+</html>

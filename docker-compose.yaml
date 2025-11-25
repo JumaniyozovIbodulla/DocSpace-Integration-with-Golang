@@ -1,0 +1,11 @@
+version: '3.5'
+services:
+  docspace:
+    image: onlyoffice/communityserver
+    container_name: docspace
+    restart: always
+    ports:
+      - "8090:80"
+    environment:
+      - JWT_ENABLED=true
+      - JWT_SECRET=mysecret123
